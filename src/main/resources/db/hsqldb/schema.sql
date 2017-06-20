@@ -43,7 +43,8 @@ CREATE TABLE parents (
   address    VARCHAR(255),
   city       VARCHAR(80),
   state      VARCHAR(30),
-  telephone  VARCHAR(20)
+  telephone  VARCHAR(20),
+  password   VARCHAR(30)
 );
 CREATE INDEX parents_last_name ON parents (last_name);
 
