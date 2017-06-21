@@ -37,12 +37,13 @@ public interface ParentRepository extends Repository<Parent, Integer> {
      * Retrieve {@link Parent}s from the data store by last name, returning all parents
      * whose last name <i>starts</i> with the given name.
      * @param lastName Value to search for
+     * @param password Value to search for
      * @return a Collection of matching {@link Parent}s (or an empty Collection if none
      * found)
      */
-    @Query("SELECT DISTINCT parent FROM Parent parent left join fetch parent.kids WHERE parent.lastName LIKE :lastName%")
+    @Query("SELECT DISTINCT parent FROM Parent parent left join fetch parent.kids WHERE parent.lastName =:lastName AND parent.password =:password")
     @Transactional(readOnly = true)
-    Collection<Parent> findByLastName(@Param("lastName") String lastName);
+    Collection<Parent> findByLastName(@Param("lastName") String lastName, @Param("password") String password);
 
     /**
      * Retrieve an {@link Parent} from the data store by id.

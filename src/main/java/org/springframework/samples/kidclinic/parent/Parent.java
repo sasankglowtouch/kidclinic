@@ -61,6 +61,10 @@ public class Parent extends Person {
     @NotEmpty
     @Digits(fraction = 0, integer = 10)
     private String telephone;
+    
+    @Column(name = "password")
+    @NotEmpty
+    private String password;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "parent")
     private Set<Kid> kids;
@@ -97,7 +101,15 @@ public class Parent extends Person {
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
-
+    
+    public String getPassword(){
+    	return this.password;
+    }
+    
+    public void setPassword(String password){
+    	this.password = password;
+    }
+    
     protected Set<Kid> getKidsInternal() {
         if (this.kids == null) {
             this.kids = new HashSet<>();
