@@ -10,7 +10,10 @@ DROP TABLE parents IF EXISTS;
 CREATE TABLE doctors (
   id         INTEGER IDENTITY PRIMARY KEY,
   first_name VARCHAR(30),
-  last_name  VARCHAR(30)
+  last_name  VARCHAR(30),
+  address    VARCHAR(255),
+  city       VARCHAR(80),
+  state      VARCHAR(80)
 );
 CREATE INDEX doctors_last_name ON doctors (last_name);
 
@@ -39,7 +42,9 @@ CREATE TABLE parents (
   last_name  VARCHAR_IGNORECASE(30),
   address    VARCHAR(255),
   city       VARCHAR(80),
-  telephone  VARCHAR(20)
+  state      VARCHAR(30),
+  telephone  VARCHAR(20),
+  password   VARCHAR(30)
 );
 CREATE INDEX parents_last_name ON parents (last_name);
 
@@ -48,7 +53,9 @@ CREATE TABLE kids (
   name       VARCHAR(30),
   birth_date DATE,
   gender_id    INTEGER NOT NULL,
-  parent_id   INTEGER NOT NULL
+  parent_id   INTEGER NOT NULL,
+  allergies  VARCHAR(255),
+  medications VARCHAR(255)
 );
 ALTER TABLE kids ADD CONSTRAINT fk_kids_parents FOREIGN KEY (parent_id) REFERENCES parents (id);
 ALTER TABLE kids ADD CONSTRAINT fk_kids_gender FOREIGN KEY (gender_id) REFERENCES gender (id);
