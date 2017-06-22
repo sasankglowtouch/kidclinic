@@ -5,7 +5,7 @@ DROP TABLE visits IF EXISTS;
 DROP TABLE kids IF EXISTS;
 DROP TABLE gender IF EXISTS;
 DROP TABLE parents IF EXISTS;
-
+DROP TABLE reviews IF EXISTS;
 
 CREATE TABLE doctors (
   id         INTEGER IDENTITY PRIMARY KEY,
@@ -49,14 +49,15 @@ CREATE TABLE parents (
 CREATE INDEX parents_last_name ON parents (last_name);
 
 CREATE TABLE kids (
-  id         INTEGER IDENTITY PRIMARY KEY,
-  name       VARCHAR(30),
-  birth_date DATE,
-  gender_id    INTEGER NOT NULL,
+  id          INTEGER IDENTITY PRIMARY KEY,
+  name        VARCHAR(30),
+  birth_date  DATE,
+  gender_id   INTEGER NOT NULL,
   parent_id   INTEGER NOT NULL,
-  allergies  VARCHAR(255),
+  allergies   VARCHAR(255),
   medications VARCHAR(255)
 );
+
 ALTER TABLE kids ADD CONSTRAINT fk_kids_parents FOREIGN KEY (parent_id) REFERENCES parents (id);
 ALTER TABLE kids ADD CONSTRAINT fk_kids_gender FOREIGN KEY (gender_id) REFERENCES gender (id);
 CREATE INDEX kids_name ON kids (name);
@@ -69,3 +70,17 @@ CREATE TABLE visits (
 );
 ALTER TABLE visits ADD CONSTRAINT fk_visits_kids FOREIGN KEY (kid_id) REFERENCES kids (id);
 CREATE INDEX visits_kid_id ON visits (kid_id);
+
+CREATE TABLE reviews (
+  id             INTEGER IDENTITY PRIMARY KEY,
+  doctor_first   VARCHAR(30),
+  doctor_last    VARCHAR(30),
+  reviewer_first VARCHAR(30),
+  reviewer_last  VARCHAR(30),
+  title          VARCHAR(255),
+  content        VARCHAR(1000),
+);
+-- ALTER TABLE reviews ADD CONSTRAINT fk_reviews_parent_first FOREIGN KEY (reviewer_first) REFERENCES parents (first_name);
+-- ALTER TABLE reviews ADD CONSTRAINT fk_reviews_parent_last FOREIGN KEY (reviewer_last) REFERENCES parents (last_name);
+-- ALTER TABLE reviews ADD CONSTRAINT fk_reviews_doctor_first FOREIGN KEY (doctor_first) REFERENCES doctors (first_name);
+-- ALTER TABLE reviews ADD CONSTRAINT fk_reviews_doctor_last FOREIGN KEY (doctor_last) REFERENCES doctors (last_name);

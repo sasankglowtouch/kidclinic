@@ -38,7 +38,7 @@ INSERT INTO kids VALUES (5, 'Thomas', '2010-11-30', 1, 4, 'None', 'Plavix');
 INSERT INTO kids VALUES (6, 'Samantha', '2010-01-20', 2, 5, 'Latex', 'Advair Diskus');
 INSERT INTO kids VALUES (7, 'George', '2015-09-04', 1, 6, 'Insulin', 'None');
 INSERT INTO kids VALUES (8, 'Max', '2015-09-04', 1, 6, 'None', 'Singulair');
-INSERT INTO kids VALUES (9, 'Brendan', '2019-08-06', 1, 7, 'None', 'Actos');
+INSERT INTO kids VALUES (9, 'Brendan', '2017-08-06', 1, 7, 'None', 'Actos');
 INSERT INTO kids VALUES (10, 'Elizabeth', '2017-02-24', 2, 8, 'None', 'None');
 INSERT INTO kids VALUES (11, 'Lucy', '2010-03-09', 2, 9, 'Iodine', 'None');
 INSERT INTO kids VALUES (12, 'Sunny', '2010-06-24', 2, 10, 'None', 'None');
@@ -48,3 +48,7 @@ INSERT INTO visits VALUES (1, 7, '2013-01-01', 'rabies shot');
 INSERT INTO visits VALUES (2, 8, '2013-01-02', 'rabies shot');
 INSERT INTO visits VALUES (3, 8, '2013-01-03', 'cold');
 INSERT INTO visits VALUES (4, 7, '2013-01-04', 'flu');
+
+INSERT INTO reviews VALUES (1, 'James', 'Carter', 'Jeff', 'Black', 'Great doctor', 'Dr. Carter was very patient in answering all our questions.');
+INSERT INTO reviews VALUES (2, 'Helen', 'Leary', 'Eduardo', 'Rodriquez', 'Horrible doctor', 'Dr. Leary will not stop calling my house.');
+
