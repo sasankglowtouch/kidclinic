@@ -69,3 +69,13 @@ CREATE TABLE visits (
 );
 ALTER TABLE visits ADD CONSTRAINT fk_visits_kids FOREIGN KEY (kid_id) REFERENCES kids (id);
 CREATE INDEX visits_kid_id ON visits (kid_id);
+
+CREATE TABLE reviews (
+  id              INTEGER IDENTITY PRIMARY KEY,
+  title           VARCHAR(30),
+  content         VARCHAR(1000),
+  doctor_first    VARCHAR(30),
+  doctor_last     VARCHAR(30),
+  author_first    VARCHAR(30),
+  author_last     VARCHAR(30)
+);
