@@ -1,6 +1,7 @@
-DROP TABLE doctor_specialties IF EXISTS;
 DROP TABLE doctors IF EXISTS;
-DROP TABLE specialties IF EXISTS;
+DROP TABLE doctor_names IF EXISTS;
+DROP TABLE doctor_specialties IF EXISTS;
+-- DROP TABLE specialties IF EXISTS;
 DROP TABLE visits IF EXISTS;
 DROP TABLE kids IF EXISTS;
 DROP TABLE gender IF EXISTS;
@@ -15,6 +16,12 @@ CREATE TABLE doctors (
   city       VARCHAR(80),
   state      VARCHAR(80)
 );
+
+CREATE TABLE doctor_names (
+  id            INTEGER IDENTITY PRIMARY KEY,
+  last_name     VARCHAR(30)
+);
+
 CREATE INDEX doctors_last_name ON doctors (last_name);
 
 CREATE TABLE specialties (
@@ -78,8 +85,13 @@ CREATE TABLE reviews (
   reviewer_first VARCHAR(30),
   reviewer_last  VARCHAR(30),
   title          VARCHAR(255),
-  content        VARCHAR(1000),
+  content        VARCHAR(1000)
 );
+
+ -- CREATE TABLE doctor_names
+ --   AS (SELECT last_name FROM doctors) WITH DATA;
+
+
 -- ALTER TABLE reviews ADD CONSTRAINT fk_reviews_parent_first FOREIGN KEY (reviewer_first) REFERENCES parents (first_name);
 -- ALTER TABLE reviews ADD CONSTRAINT fk_reviews_parent_last FOREIGN KEY (reviewer_last) REFERENCES parents (last_name);
 -- ALTER TABLE reviews ADD CONSTRAINT fk_reviews_doctor_first FOREIGN KEY (doctor_first) REFERENCES doctors (first_name);

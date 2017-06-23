@@ -41,7 +41,7 @@ import org.springframework.samples.kidclinic.model.NamedEntity;
 import org.springframework.samples.kidclinic.visit.Visit;
 
 /**
- * Simple business object representing a pet.
+ * Simple business object representing a kid.
  *
  * @author Ken Krebs
  * @author Juergen Hoeller

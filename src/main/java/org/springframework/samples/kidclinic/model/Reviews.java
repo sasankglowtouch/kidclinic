@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.kidclinic.parent;
+package org.springframework.samples.kidclinic.review;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -74,6 +74,7 @@ public class Reviews {
     @NotEmpty
     private String content;
     
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "review")
     /*
 
     public String getID() {
@@ -133,10 +134,10 @@ public class Reviews {
     public String toString() {
         return new ToStringCreator(this)
             .append("id", this.id)
-            .append("doctor_first", this.doctorFirst)
-            .append("doctor_last", this.doctorLast)           
-            .append("reviewer_first", this.reviewerFirst)
-            .append("reviewer_last", this.reviewerLast)  
+            .append("doctorFirst", this.doctorFirst)
+            .append("doctorLast", this.doctorLast)           
+            .append("reviewerFirst", this.reviewerFirst)
+            .append("reviewerLast", this.reviewerLast)  
             .append("title", this.title)
             .append("content", this.content)
             .toString();

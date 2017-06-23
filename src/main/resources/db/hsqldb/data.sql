@@ -5,6 +5,14 @@ INSERT INTO doctors VALUES (4, 'Rafael', 'Ortega', '8300 Airport Rd.', 'Middleto
 INSERT INTO doctors VALUES (5, 'Henry', 'Stevens', '876 Jupiter Dr.', 'Madison', 'WI');
 INSERT INTO doctors VALUES (6, 'Sharon', 'Jenkins', '4905 Monona Dr.', 'Monona', 'WI');
 
+INSERT INTO doctor_names VALUES (1, 'Carter');
+INSERT INTO doctor_names VALUES (2, 'Leary');
+INSERT INTO doctor_names VALUES (3, 'Douglas');
+INSERT INTO doctor_names VALUES (4, 'Ortega');
+INSERT INTO doctor_names VALUES (5, 'Stevens');
+INSERT INTO doctor_names VALUES (6, 'Jenkins');
+
+
 INSERT INTO specialties VALUES (1, 'radiology');
 INSERT INTO specialties VALUES (2, 'surgery');
 INSERT INTO specialties VALUES (3, 'dentistry');
@@ -48,6 +56,7 @@ INSERT INTO visits VALUES (1, 7, '2013-01-01', 'rabies shot');
 INSERT INTO visits VALUES (2, 8, '2013-01-02', 'rabies shot');
 INSERT INTO visits VALUES (3, 8, '2013-01-03', 'cold');
 INSERT INTO visits VALUES (4, 7, '2013-01-04', 'flu');
+
 
 INSERT INTO reviews VALUES (1, 'James', 'Carter', 'Jeff', 'Black', 'Great doctor', 'Dr. Carter was very patient in answering all our questions.');
 INSERT INTO reviews VALUES (2, 'Helen', 'Leary', 'Eduardo', 'Rodriquez', 'Horrible doctor', 'Dr. Leary will not stop calling my house.');
