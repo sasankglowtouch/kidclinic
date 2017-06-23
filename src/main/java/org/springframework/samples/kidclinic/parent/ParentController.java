@@ -86,10 +86,10 @@ class ParentController {
         }
 
         // find parents by last name
-        Collection<Parent> results = this.parents.findByLastName(parent.getLastName());
+        Collection<Parent> results = this.parents.findByLastName(parent.getLastName(), parent.getPassword());
         if (results.isEmpty()) {
             // no parents found
-            result.rejectValue("lastName", "notFound", "not found");
+            result.rejectValue("lastName", "notFound");
             return "parents/findParents";
         } else if (results.size() == 1) {
             // 1 parent found

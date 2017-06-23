@@ -10,7 +10,10 @@ DROP TABLE parents IF EXISTS;
 CREATE TABLE doctors (
   id         INTEGER IDENTITY PRIMARY KEY,
   first_name VARCHAR(30),
-  last_name  VARCHAR(30)
+  last_name  VARCHAR(30),
+  address    VARCHAR(255),
+  city       VARCHAR(80),
+  state      VARCHAR(80)
 );
 CREATE INDEX doctors_last_name ON doctors (last_name);
 
@@ -39,7 +42,9 @@ CREATE TABLE parents (
   last_name  VARCHAR_IGNORECASE(30),
   address    VARCHAR(255),
   city       VARCHAR(80),
-  telephone  VARCHAR(20)
+  state      VARCHAR(30),
+  telephone  VARCHAR(20),
+  password   VARCHAR(30)
 );
 CREATE INDEX parents_last_name ON parents (last_name);
 
