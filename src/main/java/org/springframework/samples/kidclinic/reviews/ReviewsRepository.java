@@ -23,7 +23,7 @@ import org.springframework.data.repository.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * Repository class for <code>Doctor</code> domain objects All method names are compliant with Spring Data naming
+ * Repository class for <code>Reviews</code> domain objects All method names are compliant with Spring Data naming
  * conventions so this interface can easily be extended for Spring Data See here: http://static.springsource.org/spring-data/jpa/docs/current/reference/html/jpa.repositories.html#jpa.query-methods.query-creation
  *
  * @author Ken Krebs
@@ -34,13 +34,13 @@ import org.springframework.transaction.annotation.Transactional;
 public interface ReviewsRepository extends Repository<Reviews, Integer> {
 
     /**
-     * Retrieve all <code>Doctor</code>s from the data store.
+     * Retrieve all <code>Reviews</code>s from the data store.
      *
-     * @return a <code>Collection</code> of <code>Doctor</code>s
+     * @return a <code>Collection</code> of <code>Reviews</code>s
      */
     @Transactional(readOnly = true)
     @Cacheable("reviews")
-    Collection<Doctor> findAll() throws DataAccessException;
+    Collection<Reviews> findAll() throws DataAccessException;
 
 
 }

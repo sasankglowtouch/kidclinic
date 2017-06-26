@@ -7,9 +7,9 @@
   <form th:object="${review}" class="form-horizontal" id="add-review-form" method="post">
     <div class="form-group has-feedback">
       <input
-        th:replace="~{fragments/inputField :: input ('First Name', 'reviewerFirst')}" />
+        th:replace="~{fragments/inputField :: input ('First Name', 'author_first')}" />
       <input
-        th:replace="~{fragments/inputField :: input ('Last Name', 'reviewerLast')}" />
+        th:replace="~{fragments/inputField :: input ('Last Name', 'author_last')}" />
       <input
         th:replace="~{fragments/selectField :: select ('Doctor', 'doctor', ${doctor})}" />
       <input

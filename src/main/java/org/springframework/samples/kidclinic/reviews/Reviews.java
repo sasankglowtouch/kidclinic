@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.kidclinic.doctor;
+package org.springframework.samples.kidclinic.reviews;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -27,8 +27,12 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlElement;
+import javax.persistence.CascadeType;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.beans.support.MutableSortDefinition;
@@ -77,14 +81,6 @@ public class Reviews extends Person {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "reviewID", fetch = FetchType.EAGER)
 
-    public String getId() {
-        return this.id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getTitle() {
         return this.title;
     }
@@ -105,7 +101,7 @@ public class Reviews extends Person {
         return this.doctorFirst;
     }
 
-    public void setDoctorFirst() {
+    public void setDoctorFirst(String doctorFirst) {
         this.doctorFirst = doctorFirst;
     }
 
@@ -113,12 +109,24 @@ public class Reviews extends Person {
         return this.doctorLast;
     }
 
-    public void setDoctorLast() {
+    public void setDoctorLast(String doctorLast) {
         this.doctorLast = doctorLast;
     }
 
     public String getAuthorFirst() {
         return this.authorFirst;
+    }
+
+    public void setAuthorFirst(String authorFirst) {
+        this.authorFirst = authorFirst;
+    }
+
+    public String getAuthorLast() {
+        return this.authorLast;
+    }
+
+    public void getAuthorFirst(String authorLast) {
+        this.authorLast = authorLast;
     }
 
 }
