@@ -51,6 +51,8 @@ import org.springframework.samples.kidclinic.model.Person;
 @Table(name = "reviews")
 public class Reviews extends Person {
 
+    private List<Reviews> reviews;
+
     @Column(name = "id")
     @NotEmpty
     private String id;
@@ -127,6 +129,14 @@ public class Reviews extends Person {
 
     public void getAuthorFirst(String authorLast) {
         this.authorLast = authorLast;
+    }
+
+    @XmlElement
+    public List<Reviews> getReviewsList() {
+        if (reviews == null) {
+            reviews = new ArrayList<>();
+        }
+        return reviews;
     }
 
 }

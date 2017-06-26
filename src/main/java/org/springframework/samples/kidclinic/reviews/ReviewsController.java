@@ -31,14 +31,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 class ReviewsController {
 
+	private final ReviewsRepository reviews;
+
     @Autowired
-    public ReviewsController() {
+    public ReviewsController(ReviewsRepository clinicService) {
+        this.reviews = clinicService;
     }
 
     @RequestMapping(value = { "/reviews.html" })
     public String showReviews(Map<String, Object> model) {
         // Here we are returning an object of type 'Doctors' rather than a collection of Doctor
         // objects so it is simpler for Object-Xml mapping
+        Reviews reviews = new Reviews();
+        reviews.getReviewsList().addAll(this.reviews.findAll());
+        model.put("reviews", reviews);
         return "reviews/reviews";
     }
 
