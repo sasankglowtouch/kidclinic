@@ -49,4 +49,4 @@ INSERT INTO visits VALUES (2, 8, '2013-01-02', 'rabies shot');
 INSERT INTO visits VALUES (3, 8, '2013-01-03', 'cold');
 INSERT INTO visits VALUES (4, 7, '2013-01-04', 'flu');
 
-INSERT INTO reviews VALUES (1, "First", "Content", "James", "Carter", "Jeff", "Black");
+INSERT INTO reviews VALUES (1, 'First', 'Content', 'James', 'Carter', 'Jeff', 'Black');
