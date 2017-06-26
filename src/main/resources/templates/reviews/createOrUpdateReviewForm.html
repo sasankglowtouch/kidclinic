@@ -11,7 +11,9 @@
       <input
         th:replace="~{fragments/inputField :: input ('Last Name', 'author_last')}" />
       <input
-        th:replace="~{fragments/selectField :: select ('Doctor', 'doctor', ${doctor})}" />
+        th:replace="~{fragments/inputField :: input ('Doctor First Name', 'doctor_first')}" />
+      <input
+        th:replace="~{fragments/inputField :: input ('Doctor Last Name', 'doctor_last')}" />
       <input
         th:replace="~{fragments/inputField :: input ('Title of Review', 'title')}" />
       <input 

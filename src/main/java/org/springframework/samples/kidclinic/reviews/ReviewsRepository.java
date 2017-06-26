@@ -39,7 +39,6 @@ public interface ReviewsRepository extends Repository<Reviews, Integer> {
      * @return a <code>Collection</code> of <code>Reviews</code>s
      */
     @Transactional(readOnly = true)
-    @Cacheable("reviews")
     Collection<Reviews> findAll() throws DataAccessException;
 
 
