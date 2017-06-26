@@ -15,7 +15,7 @@
     	</tr>
     	</thead>
     	<tbody>
-    		<tr th:each="reviews : ${selections}">
+    		<tr th:each="reviews : ${reviews.reviews}">
     		<td>
     			<a th:href="@{reviews/__${reviews.id}__}"
     			th:text="${reviews.title}"></a>
