@@ -35,11 +35,11 @@ class ReviewsController {
     public ReviewsController() {
     }
 
-    @RequestMapping(value = { "/reviews/reviews" })
+    @RequestMapping(value = { "/reviews.html" })
     public String showReviews(Map<String, Object> model) {
         // Here we are returning an object of type 'Doctors' rather than a collection of Doctor
         // objects so it is simpler for Object-Xml mapping
-        return "reviews";
+        return "reviews/reviews";
     }
 
 }
