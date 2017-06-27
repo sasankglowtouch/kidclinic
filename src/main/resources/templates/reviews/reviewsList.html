@@ -7,19 +7,22 @@
 
   <h2>Reviews</h2>
 
-  <p>This is a test let me know if this works.</p>
-
   <table id="Reviews" class="table table-striped">
     <thead>
       <tr>
         <th>Title</th>
+        <th>Review</th>
+        <th>Doctor</th>
+        <th>Author</th>
       </tr>
     </thead>
     <tbody>
-      <!--<tr th:each="reviews : ${reviews}">
+      <tr th:each="reviews : ${reviews.reviewsList}">
         <td th:text="${reviews.title}"></td>
-      </tr>-->
-      <tr>Test</tr>
+        <td th:text="${reviews.content}"></td>
+        <td th:text="${reviews.doctor}"></td>
+        <td th:text="${reviews.author}"></td>
+      </tr>
     </tbody>
   </table>
 </body>

@@ -42,8 +42,8 @@ class ReviewsController {
     public String showReviewsList(Map<String, Object> model) {
         // Here we are returning an object of type 'Reviews' rather than a collection of Reviews
         // objects so it is simpler for Object-Xml mapping
-        Reviews reviews = new Reviews();
-        //reviews.getReviewsList().addAll(this.reviews.findAll());
+        ReviewsHelper reviews = new ReviewsHelper();
+        reviews.getReviewsList().addAll(this.reviews.findAll());
         model.put("reviews", reviews);
         return "reviews/reviewsList";
     }
