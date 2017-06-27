@@ -5,6 +5,7 @@ DROP TABLE visits IF EXISTS;
 DROP TABLE kids IF EXISTS;
 DROP TABLE gender IF EXISTS;
 DROP TABLE parents IF EXISTS;
+DROP TABLE reviews IF EXISTS;
 
 
 CREATE TABLE doctors (
@@ -74,8 +75,7 @@ CREATE TABLE reviews (
   id              INTEGER IDENTITY PRIMARY KEY,
   title           VARCHAR(30),
   content         VARCHAR(1000),
-  doctor_first    VARCHAR(30),
-  doctor_last     VARCHAR(30),
-  author_first    VARCHAR(30),
-  author_last     VARCHAR(30)
+  doctor          VARCHAR(60),
+  author          VARCHAR(60)
 );
+CREATE INDEX reviews_id ON reviews (id);
