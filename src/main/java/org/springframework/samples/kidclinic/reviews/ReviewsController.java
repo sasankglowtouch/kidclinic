@@ -25,6 +25,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
@@ -42,6 +43,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 class ReviewsController {
 
+    private static final String VIEWS_REVIEWS_CREATE_OR_UPDATE_FORM = "reviews/createOrUpdateReviewsForm";
+
 	private final ReviewsRepository reviews;
 
     @Autowired
@@ -49,7 +52,29 @@ class ReviewsController {
         this.reviews = reviewsService;
     }
 
-    @RequestMapping(value = { "/reviews.html" })
+    @InitBinder
+    public void setAllowedFields(WebDataBinder dataBinder) {
+        dataBinder.setDisallowedFields("id");
+    }
+
+    @RequestMapping(value = "/reviews/new", method = RequestMethod.GET)
+    public String initCreationForm(Map<String, Object> model) {
+        ReviewsHelper reviews = new ReviewsHelper();
+        model.put("reviews", reviews);
+        return VIEWS_REVIEWS_CREATE_OR_UPDATE_FORM;
+    }
+
+    @RequestMapping(value = "/reviews/new", method = RequestMethod.POST)
+    public String processCreationForm(@Valid ReviewsHelper reviewsStore, BindingResult result) {
+        if (result.hasErrors()) {
+            return VIEWS_REVIEWS_CREATE_OR_UPDATE_FORM;
+        } else {
+            this.reviews.save(reviewsStore);
+            return "reviews/reviewsList";
+        }
+    }
+
+    @RequestMapping(value = { "/reviews" })
     public String showReviews(Map<String, Object> model) {
         // Here we are returning an object of type 'Doctors' rather than a collection of Doctor
         // objects so it is simpler for Object-Xml mapping

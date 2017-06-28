@@ -7,17 +7,13 @@
   <form th:object="${review}" class="form-horizontal" id="add-review-form" method="post">
     <div class="form-group has-feedback">
       <input
-        th:replace="~{fragments/inputField :: input ('First Name', 'author_first')}" />
+        th:replace="~{fragments/inputField :: input ('Name', 'author')}" />
       <input
-        th:replace="~{fragments/inputField :: input ('Last Name', 'author_last')}" />
+        th:replace="~{fragments/inputField :: input ('Doctor', 'doctor')}" />
       <input
-        th:replace="~{fragments/inputField :: input ('Doctor First Name', 'doctor_first')}" />
-      <input
-        th:replace="~{fragments/inputField :: input ('Doctor Last Name', 'doctor_last')}" />
-      <input
-        th:replace="~{fragments/inputField :: input ('Title of Review', 'title')}" />
+        th:replace="~{fragments/inputField :: input ('Title', 'title')}" />
       <input 
-        th:replace="~{fragments/inputField :: input ('Review', 'review')}" />
+        th:replace="~{fragments/inputField :: input ('Review', 'content')}" />
 
     </div>
     <div class="form-group">
