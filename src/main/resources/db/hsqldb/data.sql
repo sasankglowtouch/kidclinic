@@ -49,5 +49,9 @@ INSERT INTO visits VALUES (2, 8, '2013-01-02', 'rabies shot');
 INSERT INTO visits VALUES (3, 8, '2013-01-03', 'cold');
 INSERT INTO visits VALUES (4, 7, '2013-01-04', 'flu');
 
+<<<<<<< HEAD
 INSERT INTO reviews VALUES (1, 'They Helped Save My Child!', 'Dr. Stevens helped diagnose my child with a rare disease! He saved my kids life!', 'Henry Stevens', 'John Doe');
 INSERT INTO reviews VALUES (2, 'Extremely Clean Facility!', 'Everyone keeps a super clean office which makes me feel much more comfortable!', 'Linda Douglas', 'Jane Doe');
+=======
+INSERT INTO reviews VALUES (1, 'First', 'Content', 'James', 'Carter', 'Jeff', 'Black');
+>>>>>>> sasank
