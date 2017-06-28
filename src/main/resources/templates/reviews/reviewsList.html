@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org"
@@ -29,3 +30,36 @@
 
 <footer> </footer>
 </html>
+=======
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'reviews')}">
+
+<body>
+
+    <h2>Reviews Test Test</h2>
+    <table id = "reviews" class="table table-striped">
+    	<thead>
+           <tr>
+              <th style="width: 150px;">Title</th>
+              <th style="width: 150px;">Doctor</th>
+              <th style="width: 150px;">Reviewer</th>
+              <th style="width: 150px;">Review</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr th:each="reviews : ${reviews.reviewsList}">
+              <td th:text="${reviews.title}"></td>
+              <td th:text="${reviews.doctor_first + ' ' + reviews.doctor_last"></td>
+              <td th:text="${reviews.author_first + ' ' + reviews.author_last}"></td>
+              <td th:text="${reviews.content}"/></td>
+          </tr>
+      </tbody>
+  </table>
+  <p>Let me know if this works</p>
+</body>
+
+<footer></footer>
+
+</html>
+>>>>>>> sasank

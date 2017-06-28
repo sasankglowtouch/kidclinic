@@ -17,10 +17,21 @@ package org.springframework.samples.kidclinic.reviews;
 
 import java.util.Map;
 
+import java.util.Collection;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.ModelMap;
+import org.springframework.util.StringUtils;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 
 /**
  * @author Juergen Hoeller
@@ -31,6 +42,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 class ReviewsController {
 
+<<<<<<< HEAD
     private final ReviewsRepository reviews;
 
     @Autowired
@@ -43,6 +55,20 @@ class ReviewsController {
         // Here we are returning an object of type 'Reviews' rather than a collection of Reviews
         // objects so it is simpler for Object-Xml mapping
         ReviewsHelper reviews = new ReviewsHelper();
+=======
+	private final ReviewsRepository reviews;
+
+    @Autowired
+    public ReviewsController(ReviewsRepository reviewsService) {
+        this.reviews = reviewsService;
+    }
+
+    @RequestMapping(value = { "/reviews.html" })
+    public String showReviews(Map<String, Object> model) {
+        // Here we are returning an object of type 'Doctors' rather than a collection of Doctor
+        // objects so it is simpler for Object-Xml mapping
+        Reviews reviews = new Reviews();
+>>>>>>> sasank
         reviews.getReviewsList().addAll(this.reviews.findAll());
         model.put("reviews", reviews);
         return "reviews/reviewsList";
