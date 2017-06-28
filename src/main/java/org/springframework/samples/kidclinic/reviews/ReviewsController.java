@@ -42,20 +42,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 class ReviewsController {
 
-<<<<<<< HEAD
-    private final ReviewsRepository reviews;
-
-    @Autowired
-    public ReviewsController(ReviewsRepository clinicService) {
-        this.reviews = clinicService;
-    }
-
-    @RequestMapping(value = { "/reviews.html" })
-    public String showReviewsList(Map<String, Object> model) {
-        // Here we are returning an object of type 'Reviews' rather than a collection of Reviews
-        // objects so it is simpler for Object-Xml mapping
-        ReviewsHelper reviews = new ReviewsHelper();
-=======
 	private final ReviewsRepository reviews;
 
     @Autowired
@@ -67,8 +53,7 @@ class ReviewsController {
     public String showReviews(Map<String, Object> model) {
         // Here we are returning an object of type 'Doctors' rather than a collection of Doctor
         // objects so it is simpler for Object-Xml mapping
-        Reviews reviews = new Reviews();
->>>>>>> sasank
+        ReviewsHelper reviews = new ReviewsHelper();
         reviews.getReviewsList().addAll(this.reviews.findAll());
         model.put("reviews", reviews);
         return "reviews/reviewsList";

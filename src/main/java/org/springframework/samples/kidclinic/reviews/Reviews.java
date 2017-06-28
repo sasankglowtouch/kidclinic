@@ -50,17 +50,10 @@ import org.springframework.beans.support.PropertyComparator;
 @Table(name = "reviews")
 public class Reviews implements Serializable {
 
-<<<<<<< HEAD
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-=======
-    private List<Reviews> reviews;
 
-    @Column(name = "id")
-    @NotEmpty
-    private String id;
->>>>>>> sasank
 
     @Column(name = "title")
     @NotEmpty
@@ -121,32 +114,5 @@ public class Reviews implements Serializable {
     public void setAuthor(String author) {
         this.author = author;
     }
-<<<<<<< HEAD
-=======
 
-    public String getAuthorFirst() {
-        return this.authorFirst;
-    }
-
-    public void setAuthorFirst(String authorFirst) {
-        this.authorFirst = authorFirst;
-    }
-
-    public String getAuthorLast() {
-        return this.authorLast;
-    }
-
-    public void getAuthorFirst(String authorLast) {
-        this.authorLast = authorLast;
-    }
-
-    @XmlElement
-    public List<Reviews> getReviewsList() {
-        if (reviews == null) {
-            reviews = new ArrayList<>();
-        }
-        return reviews;
-    }
-
->>>>>>> sasank
 }
