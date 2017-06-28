@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout (~{::body},'reviews')}">
+
+<body>
+
+  <h2>Reviews</h2>
+
+  <table id="Reviews" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Review</th>
+        <th>Doctor</th>
+        <th>Author</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="reviews : ${reviews.reviewsList}">
+        <td th:text="${reviews.title}"></td>
+        <td th:text="${reviews.content}"></td>
+        <td th:text="${reviews.doctor}"></td>
+        <td th:text="${reviews.author}"></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+<footer> </footer>
+</html>

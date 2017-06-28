@@ -5,6 +5,7 @@ DROP TABLE visits IF EXISTS;
 DROP TABLE kids IF EXISTS;
 DROP TABLE gender IF EXISTS;
 DROP TABLE parents IF EXISTS;
+DROP TABLE reviews IF EXISTS;
 
 
 CREATE TABLE doctors (
@@ -69,3 +70,12 @@ CREATE TABLE visits (
 );
 ALTER TABLE visits ADD CONSTRAINT fk_visits_kids FOREIGN KEY (kid_id) REFERENCES kids (id);
 CREATE INDEX visits_kid_id ON visits (kid_id);
+
+CREATE TABLE reviews (
+  id              INTEGER IDENTITY PRIMARY KEY,
+  title           VARCHAR(30),
+  content         VARCHAR(1000),
+  doctor          VARCHAR(60),
+  author          VARCHAR(60)
+);
+CREATE INDEX reviews_id ON reviews (id);

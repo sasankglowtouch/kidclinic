@@ -23,11 +23,11 @@ INSERT INTO parents VALUES (1, 'George', 'Franklin', '110 W. Liberty St.', 'Madi
 INSERT INTO parents VALUES (2, 'Betty', 'Davis', '638 Cardinal Ave.', 'Sun Prairie', 'WI', '6085551749', 'betty11');
 INSERT INTO parents VALUES (3, 'Eduardo', 'Rodriquez', '2693 Commerce St.', 'McFarland', 'AZ', '6085558763', 'eduardo11');
 INSERT INTO parents VALUES (4, 'Harold', 'Davis', '563 Friendly St.', 'Windsor', 'CO', '6085553198', 'harold11');
-INSERT INTO parents VALUES (5, 'Peter', 'McTavish', '2387 S. Fair Way', 'Madison', 'WI', '6085552765', 'peter11');
+INSERT INTO parents VALUES (5, 'Soap', 'McTavish', '2387 S. Fair Way', 'Madison', 'WI', '6085552765', 'peter11');
 INSERT INTO parents VALUES (6, 'Jean', 'Coleman', '105 N. Lake St.', 'Monona', 'WI', '6085552654', 'jean11');
 INSERT INTO parents VALUES (7, 'Jeff', 'Black', '1450 Oak Blvd.', 'Monona', 'WI', '6085555387', 'jeff11');
 INSERT INTO parents VALUES (8, 'Maria', 'Escobito', '345 Maple St.', 'Madison', 'WI', '6085557683', 'maria11');
-INSERT INTO parents VALUES (9, 'David', 'Schroeder', '2749 Blackhawk Trail', 'Madison', 'WI', '6085559435', 'david11');
+INSERT INTO parents VALUES (9, 'Dennis', 'Schroeder', '2749 Blackhawk Trail', 'Madison', 'WI', '6085559435', 'david11');
 INSERT INTO parents VALUES (10, 'Carlos', 'Estaban', '2335 Independence La.', 'Waunakee', 'WI', '6085555487', 'carlos11');
 
 INSERT INTO kids VALUES (1, 'Alyssa', '2000-09-07', 2, 1, 'Claritin', 'None');
@@ -48,3 +48,6 @@ INSERT INTO visits VALUES (1, 7, '2013-01-01', 'rabies shot');
 INSERT INTO visits VALUES (2, 8, '2013-01-02', 'rabies shot');
 INSERT INTO visits VALUES (3, 8, '2013-01-03', 'cold');
 INSERT INTO visits VALUES (4, 7, '2013-01-04', 'flu');
+
+INSERT INTO reviews VALUES (1, 'They Helped Save My Child!', 'Dr. Stevens helped diagnose my child with a rare disease! He saved my kids life!', 'Henry Stevens', 'John Doe');
+INSERT INTO reviews VALUES (2, 'Extremely Clean Facility!', 'Everyone keeps a super clean office which makes me feel much more comfortable!', 'Linda Douglas', 'Jane Doe');
