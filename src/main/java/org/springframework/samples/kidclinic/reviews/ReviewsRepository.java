@@ -42,5 +42,7 @@ public interface ReviewsRepository extends Repository<Reviews, Integer> {
      */
     @Transactional(readOnly = true)
     Collection<Reviews> findAll() throws DataAccessException;
+
+    void save(ReviewsHelper reviews);
     
 }
