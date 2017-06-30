@@ -1,9 +1,9 @@
 <html xmlns:th="http://www.thymeleaf.org"
-th:replace="~{fragments/layout :: layout (~{::body},'reviews')}">
+  th:replace="~{fragments/layout :: layout (~{::body},'reviews')}">
 
 <body>
 
-  <h2>Parent</h2>
+  <h2>Reviews</h2>
   <form th:object="${reviewsList}" class="form-horizontal" id="add-review-form" method="post">
     <div class="form-group has-feedback">
       <input
@@ -18,10 +18,7 @@ th:replace="~{fragments/layout :: layout (~{::body},'reviews')}">
     </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <button
-        th:with="text=${parent['new']} ? 'Add Review' : 'Update Review'"
-        class="btn btn-default" type="submit" th:text="${text}">Add
-        Review</button>
+        <button class="btn btn-default" type="submit" th:text="Add Review">Add Review</button>
       </div>
     </div>
   </form>
